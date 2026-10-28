@@ -1,0 +1,28 @@
+
+
+const navLinks=[
+    {href:"#about",label:"About"},
+    {href:"#project",label:"Project"},
+    {href:"#experience",label:"Experience"},
+    {href:"#testimonials",label:"Testimonials"},
+
+]
+
+export const Navbar=()=>{
+    return <header>
+        <nav>
+            <a>
+                PM <span>.</span>
+            </a>
+
+           {/* Desktop Nav */}
+           <div>
+            <div>
+                {navLinks.map((link)=>(
+                    <a>{link.label}</a>
+                ) )}
+            </div>
+           </div>
+        </nav>
+    </header>
+}
