@@ -112,3 +112,45 @@ export const skillGroups = [
     icon: 'BarChart3',
   },
 ];
+
+export const staticProjects = [
+  {
+    _id: 'rentride',
+    slug: 'rentride',
+    title: 'RentRide — Multi-Vehicle Rental Platform',
+    description:
+      'A multi-vehicle rental platform that allows users to explore and book different types of vehicles. Built responsive interfaces using React.js and Tailwind CSS and implemented backend services with Node.js and Express.js.',
+    technologies: ['React.js', 'Node.js', 'Express.js', 'Tailwind CSS', 'JWT', 'Razorpay', 'Map Services', 'Supabase'],
+    image: '/images/projects/rentride.svg',
+    githubUrl: '',
+    liveUrl: '',
+    featured: true,
+    displayOrder: 1,
+  },
+  {
+    _id: 'text-to-image',
+    slug: 'text-to-image-generation',
+    title: 'Text-to-Image Generation',
+    description:
+      'An AI-powered web application that converts text prompts into images. Built an interactive frontend, integrated an AI image-generation API, and implemented backend functionality to process user prompts and display generated images.',
+    technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Tailwind CSS'],
+    image: '/images/projects/text-to-image.svg',
+    githubUrl: '',
+    liveUrl: '',
+    featured: true,
+    displayOrder: 2,
+  },
+  {
+    _id: 'portfolio',
+    slug: 'personal-developer-portfolio',
+    title: 'Personal Developer Portfolio',
+    description:
+      'A responsive personal portfolio showcasing technical skills, internship experience, and development projects. Features dynamic project management via a secure admin dashboard, a working contact form, and JWT-secured APIs.',
+    technologies: ['React.js', 'JavaScript', 'Tailwind CSS', 'Node.js', 'Express.js', 'MongoDB'],
+    image: '/images/projects/portfolio.svg',
+    githubUrl: 'https://github.com/LaxmanTarihalkar',
+    liveUrl: '',
+    featured: true,
+    displayOrder: 3,
+  },
+];
