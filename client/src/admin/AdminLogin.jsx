@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Navigate, useNavigate, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Lock, Mail, Loader2, AlertCircle, ArrowLeft } from 'lucide-react';
+import { Lock, Mail, Loader2, AlertCircle, ArrowLeft, Github } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
 import { personal } from '../data/portfolio.js';
 
@@ -127,9 +127,20 @@ export default function AdminLogin() {
           </p>
         </div>
 
-        <p className="mt-6 text-center text-xs text-cream/40">
-          © {personal.fullName} — {new Date().getFullYear()}
-        </p>
+        <div className="mt-6 flex flex-col items-center gap-3">
+          <a
+            href={personal.github}
+            target="_blank"
+            rel="noreferrer"
+            className="flex items-center gap-2 rounded-full border border-cream/10 px-4 py-2 text-xs font-medium text-cream/50 transition-all hover:border-burnt/50 hover:text-burnt"
+          >
+            <Github className="h-3.5 w-3.5" />
+            github.com/LaxmanTarihalkar
+          </a>
+          <p className="text-center text-xs text-cream/30">
+            © {personal.fullName} — {new Date().getFullYear()}
+          </p>
+        </div>
       </motion.div>
     </section>
   );

@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { LayoutDashboard, FolderKanban, Mail, LogOut, ExternalLink, Briefcase, Layers } from 'lucide-react';
+import { LayoutDashboard, FolderKanban, Mail, LogOut, ExternalLink, Briefcase, Layers, Github } from 'lucide-react';
 import { useAuth } from '../context/AuthContext.jsx';
+import { personal } from '../data/portfolio.js';
 import Overview from './Overview.jsx';
 import ProjectsManager from './ProjectsManager.jsx';
 import MessagesManager from './MessagesManager.jsx';
@@ -69,6 +70,15 @@ export default function AdminDashboard() {
             </nav>
 
             <div className="mt-5 flex gap-2 border-t border-cream/10 pt-5 lg:flex-col">
+              <a
+                href={personal.github}
+                target="_blank"
+                rel="noreferrer"
+                className="flex flex-1 items-center justify-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-medium text-cream/60 transition-colors hover:bg-cream/5 hover:text-cream lg:w-full"
+              >
+                <Github className="h-4 w-4" />
+                <span className="hidden lg:inline">GitHub</span>
+              </a>
               <button
                 onClick={() => navigate('/')}
                 className="flex flex-1 items-center justify-center gap-2 rounded-xl px-3.5 py-2.5 text-sm font-medium text-cream/60 transition-colors hover:bg-cream/5 hover:text-cream lg:w-full"
