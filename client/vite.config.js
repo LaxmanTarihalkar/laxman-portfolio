@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-// Vite config. The dev server proxies /api to the Express backend so the
-// frontend and backend share an origin in development (cookies work).
+// VITE_BASE_PATH is set to /laxman-portfolio/ for GitHub Pages.
+// Leave it empty (or unset) for local dev and Vercel.
+const base = process.env.VITE_BASE_PATH || '/';
+
 export default defineConfig({
   plugins: [react()],
+  base,
   server: {
     port: 5173,
     proxy: {
