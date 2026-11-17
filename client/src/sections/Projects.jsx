@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Github, ExternalLink, ArrowRight, Loader2, AlertTriangle, FolderOpen } from 'lucide-react';
 import { useProjects } from '../hooks/useProjects.js';
 import SectionHeading from '../components/SectionHeading.jsx';
+import { assetUrl } from '../utils/assetUrl.js';
 
 function ProjectCard({ project, index }) {
   const num = String(index + 1).padStart(2, '0');
@@ -20,17 +21,17 @@ function ProjectCard({ project, index }) {
       <div className="relative aspect-video overflow-hidden md:col-span-5 md:aspect-auto">
         {project.image ? (
           <img
-            src={project.image}
+            src={assetUrl(project.image)}
             alt={`${project.title} cover`}
             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
             loading="lazy"
             onError={(e) => {
-              e.currentTarget.src = '/images/projects/fallback.svg';
+              e.currentTarget.src = assetUrl('/images/projects/fallback.svg');
             }}
           />
         ) : (
           <img
-            src="/images/projects/fallback.svg"
+            src={assetUrl('/images/projects/fallback.svg')}
             alt={`${project.title} cover`}
             className="h-full w-full object-cover"
             loading="lazy"
