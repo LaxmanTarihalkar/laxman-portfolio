@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowDown, MapPin } from 'lucide-react';
 import { personal } from '../data/portfolio.js';
+import { assetUrl } from '../utils/assetUrl.js';
 
 const container = {
   hidden: {},
@@ -39,12 +40,12 @@ export default function Hero() {
         loop
         playsInline
         preload="metadata"
-        poster={personal.heroPoster}
+        poster={assetUrl('/images/hero-poster.svg')}
         onError={() => setVideoFailed(true)}
         onLoadedData={() => setVideoReady(true)}
         aria-hidden="true"
       >
-        <source src={personal.heroVideo} type="video/mp4" />
+        <source src={assetUrl('/videos/hero-video.mp4')} type="video/mp4" />
       </video>
 
       {/* Gradient overlays — burnt orange + dark for readability */}

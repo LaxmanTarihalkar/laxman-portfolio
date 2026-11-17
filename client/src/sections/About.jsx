@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Download, GraduationCap, Award, MapPin } from 'lucide-react';
 import { aboutParagraphs, aboutFacts, personal } from '../data/portfolio.js';
 import SectionHeading from '../components/SectionHeading.jsx';
+import { assetUrl } from '../utils/assetUrl.js';
 
 const factIcons = [GraduationCap, Award, MapPin];
 
@@ -22,12 +23,12 @@ export default function About() {
           >
             <div className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-burnt-200 to-sand">
               <img
-                src="/images/Laxman-Tarihalkar-img.png"
+                src={assetUrl('/images/Laxman-Tarihalkar-img.png')}
                 alt="Portrait of Laxman Tarihalkar"
                 className="aspect-[4/5] w-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                 loading="lazy"
                 onError={(e) => {
-                  e.currentTarget.src = '/images/profile.jpg';
+                  e.currentTarget.src = assetUrl('/images/profile.jpg');
                 }}
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-charcoal/10" />
@@ -83,7 +84,7 @@ export default function About() {
             {/* Resume download */}
             <div className="mt-10">
               <a
-                href={personal.resumeUrl}
+                href={assetUrl(personal.resumeUrl)}
                 download
                 className="btn-primary"
                 aria-label="Download resume PDF"
