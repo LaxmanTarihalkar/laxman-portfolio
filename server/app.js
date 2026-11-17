@@ -21,10 +21,18 @@ app.use(helmet());
 app.use(
   cors({
     origin(origin, cb) {
-      const allowed = (process.env.CLIENT_URL || 'http://localhost:5173')
+      // Accept multiple CLIENT_URL values separated by commas.
+      // Always allow GitHub Pages origin alongside localhost.
+      const defaults = [
+        'http://localhost:5173',
+        'https://laxmantarihalkar.github.io',
+      ];
+      const configured = (process.env.CLIENT_URL || '')
         .split(',')
-        .map((u) => u.trim());
-      // allow same-origin / curl (no origin) in dev; block unknown origins
+        .map((u) => u.trim())
+        .filter(Boolean);
+      const allowed = [...new Set([...defaults, ...configured])];
+
       if (!origin || allowed.includes(origin)) return cb(null, true);
       return cb(new Error('Not allowed by CORS'));
     },
