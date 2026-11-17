@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="800" height="600">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#191919"/>
+      <stop offset="100%" stop-color="#86391F"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#bg)"/>
+  <!-- prompt box -->
+  <rect x="60" y="180" width="300" height="60" rx="12" fill="#F4EBDD" opacity="0.1"/>
+  <text x="80" y="218" font-family="Inter, sans-serif" font-size="18" fill="#D8C2A5">"a futuristic city..."</text>
+  <text x="60" y="120" font-family="Plus Jakarta Sans, sans-serif" font-weight="800" font-size="44" fill="#F4EBDD">Text → Image</text>
+  <text x="62" y="150" font-family="Inter, sans-serif" font-size="18" fill="#D8C2A5">AI Image Generation</text>
+  <!-- arrow -->
+  <path d="M380 210 l70 0 l-14 -14 M450 210 l-14 14" stroke="#C65D32" stroke-width="4" fill="none"/>
+  <!-- generated image placeholder -->
+  <rect x="470" y="150" width="260" height="200" rx="16" fill="#D98B45"/>
+  <rect x="470" y="150" width="260" height="200" rx="16" fill="url(#bg)" opacity="0.2"/>
+  <path d="M500 320 l50 -70 l40 50 l40 -30 l50 50 z" fill="#191919" opacity="0.4"/>
+  <circle cx="560" cy="210" r="22" fill="#F4EBDD" opacity="0.6"/>
+</svg>

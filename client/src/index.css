@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --burnt: #c65d32;
+  --charcoal: #191919;
+  --cream: #f4ebdd;
+  --sand: #d8c2a5;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'Plus Jakarta Sans', system-ui, sans-serif;
+  background-color: var(--charcoal);
+  color: #f4ebdd;
+  overflow-x: hidden;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #191919;
+}
+::-webkit-scrollbar-thumb {
+  background: #5e2715;
+  border-radius: 6px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #c65d32;
+}
+
+::selection {
+  background: #c65d32;
+  color: #f4ebdd;
+}
+
+@layer components {
+  .container-wide {
+    @apply mx-auto w-full max-w-7xl px-6 sm:px-8 lg:px-16;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-burnt/60 focus-visible:ring-offset-2;
+  }
+
+  .btn-primary {
+    @apply btn bg-burnt text-cream hover:bg-burnt-600 hover:shadow-[0_10px_30px_-10px_rgba(198,93,50,0.7)];
+  }
+
+  .btn-outline {
+    @apply btn border border-cream/25 text-cream hover:border-burnt hover:text-burnt;
+  }
+
+  .eyebrow {
+    @apply text-xs font-semibold uppercase tracking-[0.4em] text-burnt-400;
+  }
+
+  .section-pad {
+    @apply py-24 md:py-32;
+  }
+}
+
+/* Editorial display heading utility */
+.display-heading {
+  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 0.95;
+}
